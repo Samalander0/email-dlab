@@ -33,7 +33,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/default/?expert=${expert}&topic=${topic}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}`)
     output = await response.json()
     email = DOMPurify.sanitize(marked(output))
 
@@ -64,7 +64,7 @@
 </script>
 
 <svelte:head>
-  <title>Default</title>
+  <title>Followup</title>
 </svelte:head>
 
 <main>
