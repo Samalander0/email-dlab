@@ -4,7 +4,7 @@
   import DOMPurify from 'dompurify';
   import { marked } from 'marked'
 
-  import placeholders from "../lib/examples.js" 
+  import placeholders from "../../lib/examples.js" 
   
   let state = "form"
   let email,
