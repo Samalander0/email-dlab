@@ -4,7 +4,7 @@
   import DOMPurify from 'dompurify';
   import { marked } from 'marked'
 
-  import placeholders from "../../lib/examples.js" 
+  import placeholders from "../../lib/followupex.js" 
   
   let state = "form"
   let email,
@@ -12,20 +12,20 @@
 
   let expert,
       topic,
-      challenge,
-      hmw_1,
-      hmw_2,
-      hmw_3;
+      interest,
+      date,
+      email,
+      phone;
 
   function randomize() {
     let example = placeholders[Math.floor(Math.random() * placeholders.length)]
 
     expert = example.expert
     topic = example.topic
-    challenge = example.challenge
-    hmw_1 = example.hmw_1
-    hmw_2 = example.hmw_2
-    hmw_3 = example.hmw_3
+    interest = example.interest
+    date = example.date
+    email = example.email
+    phone = example.phone
   }
 
   async function generateEmail(e) {
@@ -33,7 +33,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
     email = DOMPurify.sanitize(marked(output))
 
@@ -44,10 +44,10 @@
     // Reset form fields
     expert = ""
     topic = ""
-    challenge = ""
-    hmw_1 = ""
-    hmw_2 = ""
-    hmw_3 = ""
+    interest = ""
+    date = ""
+    email = ""
+    phone = ""
 
     // Go back to form state
     state = "form"
@@ -81,24 +81,24 @@
         </div>
       </div>
       <div>
-        <label for="challenge">Challenge</label>
-        <input bind:value={challenge} type="text" id="challenge"/>
+        <label for="interest">Reason for Interest in Project</label>
+        <input bind:value={interest} type="text" id="interest"/>
       </div>
       <div>
-        <label for="hmw1">How Might We Question #1</label>
-        <textarea bind:value={hmw_1} id="hmw1"/>
+        <label for="date">Initial Outreach Date</label>
+        <textarea bind:value={date} id="date"/>
       </div>
       <div>
-        <label for="hmw2">How Might We Question #2</label>
-        <textarea bind:value={hmw_2} id="hmw2"/>
+        <label for="email">Email Address</label>
+        <textarea bind:value={email} id="email"/>
       </div>
       <div>
-        <label for="hmw3">How Might We Question #3</label>
-        <textarea bind:value={hmw_3} id="hmw3"/>
+        <label for="phone">Phone Number</label>
+        <textarea bind:value={phone} id="phone"/>
       </div>
 
       <div class="horizontal-stack">
-        <input type="submit" value="Get Outreach Email" on:click={generateEmail} disabled={!(expert && topic && challenge && hmw_1 && hmw_2 && hmw_3)}/>
+        <input type="submit" value="Get Followup Email" on:click={generateEmail} disabled={!(expert && topic && interest && date && email && phone)}/>
         <button on:click={randomize}>Randomize</button>
       </div>
     </form>
