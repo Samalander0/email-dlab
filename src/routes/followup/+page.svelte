@@ -76,17 +76,17 @@
           <input bind:value={expert} type="text" id="expert"/>
         </div>
         <div>
-          <label for="topic">Project Topic</label>
-          <input bind:value={topic} type="text" id="topic"/>
+          <label for="date">Initial Outreach Date</label>
+          <input bind:value={date} type="text" id="date"/>
         </div>
       </div>
       <div>
-        <label for="interest">Reason for Interest in Project</label>
-        <input bind:value={interest} type="text" id="interest"/>
+        <label for="topic">Topic Problem</label>
+        <input bind:value={topic} type="text" id="topic"/>
       </div>
       <div>
-        <label for="date">Initial Outreach Date</label>
-        <textarea bind:value={date} id="date"/>
+        <label for="interest">Reason for Interest in Project</label>
+        <textarea bind:value={interest} id="interest"/>
       </div>
       <div>
         <label for="email">Email Address</label>
