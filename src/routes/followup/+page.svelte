@@ -7,7 +7,7 @@
   import placeholders from "../../lib/followupex.js" 
   
   let state = "form"
-  let email,
+  let email_output,
       output;
 
   let expert,
@@ -35,7 +35,7 @@
 
     const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
-    email = DOMPurify.sanitize(marked(output))
+    email_output = DOMPurify.sanitize(marked(output))
 
     state = "result"
   }
@@ -106,7 +106,7 @@
     <p>Loading...</p>
   {:else if state == "result"}
     <div bind:this={result_element} class="result">
-      {@html email}
+      {@html email_output}
     </div>
     <button on:click={restart} class="back-arrow">
       <img alt="back arrow" src="back.svg"/>
