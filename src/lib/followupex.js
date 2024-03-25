@@ -73,7 +73,7 @@ const placeholders = [
   },
   {
     expert: "an astronomer",
-    topic: "making space exploration more accessibly and affordable",
+    topic: "making space exploration more accessible and affordable",
     interest: "I want to explore outer space",
     date: "july 17",
     email: "spaceandstars@gmail.com",
