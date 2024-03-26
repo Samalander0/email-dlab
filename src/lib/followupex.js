@@ -2,6 +2,7 @@ const placeholders = [
   {
     expert: "a biologist",
     topic: "pollution in small bodies of water",
+    keywords: "plastic, oil, rivers, acidity, reservoir, freshwater",
     interest: "I want to pursue enviromental sustainability.",
     date: "last monday",
     email: "turtlelover@gmail.com",
@@ -10,6 +11,7 @@ const placeholders = [
   {
     expert: "a doctor",
     topic: "early arthritis",
+    keywords: "joint pain, middle age, bones, joint stiffness, mobility",
     interest: "I am interested in a medical career",
     date: "earlier this month",
     email: "doctorintraining@gmail.com",
@@ -18,6 +20,7 @@ const placeholders = [
   {
     expert: "a chef",
     topic: "vegan alternatives",
+    keywords: "diet, health, ethics, sustainability",
     interest: "I want to pursue enviromental sustainability.",
     date: "last week",
     email: "gordonramseyfan@gmail.com",
@@ -26,6 +29,7 @@ const placeholders = [
   {
     expert: "a personal trainer",
     topic: "creating balanced personalized workout routines",
+    keywords: "health, fitness, weight loss, consistency",
     interest: "I want to work in sports medicine",
     date: "two weeks ago",
     email: "footballfan1@gmail.com",
@@ -34,6 +38,7 @@ const placeholders = [
   {
     expert: "a business consultant",
     topic: "making startups more successful",
+    keywords: "startup, entrepreneur, business, investors",
     interest: "I want to create and grow my own company",
     date: "earlier this week",
     email: "innovator@gmail.com",
@@ -42,14 +47,16 @@ const placeholders = [
   {
     expert: "a philosopher",
     topic: "keeping the use of artificial intelligence ethical",
+    keywords: "ethics, AI, technology",
     interest: "I think that AI is very interesting but a little scary",
     date: "March 3",
-    email: "turtlelover@gmail.com",
+    email: "person@gmail.com",
     phone: "123 456 7890"
   },
   {
     expert: "a physicist",
     topic: "quantum computer affordability",
+    keywords: "technology, affordability, quantum mechanics",
     interest: "I'm interested in pursuing technology in the future",
     date: "September 27",
     email: "random@gmail.com",
@@ -58,6 +65,7 @@ const placeholders = [
   {
     expert: "an architext",
     topic: "housing affordability and sustainability",
+    keywords: "affordability, houses, sustainable development",
     interest: "I suffered from a lack of affordable housing and I don't want others to experience the same thing",
     date: "January 6",
     email: "futurebuilder@gmail.com",
@@ -66,6 +74,7 @@ const placeholders = [
   {
     expert: "an artist",
     topic: "making impactful and sustainable public art",
+    keywords: "art, expression, impact, positivity",
     interest: "I am interested in a future career in art",
     date: "two weeks ago",
     email: "futurepainter@gmail.com",
@@ -74,6 +83,7 @@ const placeholders = [
   {
     expert: "an astronomer",
     topic: "making space exploration more accessible and affordable",
+    keywords: "affordability, outer space, space travel, nasa, spacex",
     interest: "I want to explore outer space",
     date: "july 17",
     email: "spaceandstars@gmail.com",
@@ -82,6 +92,7 @@ const placeholders = [
   {
     expert: "a botanist",
     topic: "identifying and removing invasive species",
+    keywords: "invasive species, enviromental sustainability, ecosystem health",
     interest: "I want to pursue enviromental sustainability.",
     date: "april 12",
     email: "naturelover@gmail.com",

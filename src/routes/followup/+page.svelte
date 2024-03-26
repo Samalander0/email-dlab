@@ -12,6 +12,7 @@
 
   let expert,
       topic,
+      keywords
       interest,
       date,
       email,
@@ -22,6 +23,7 @@
 
     expert = example.expert
     topic = example.topic
+    keywords = example.keywords
     interest = example.interest
     date = example.date
     email = example.email
@@ -33,7 +35,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
     email_output = DOMPurify.sanitize(marked(output))
 
@@ -44,6 +46,7 @@
     // Reset form fields
     expert = ""
     topic = ""
+    keywords = ""
     interest = ""
     date = ""
     email = ""
@@ -85,20 +88,26 @@
         <input bind:value={topic} type="text" id="topic"/>
       </div>
       <div>
+        <label for="keywords">Industry Keywords</label>
+        <textarea bind:value={keywords} id="keywords"/>
+      </div>
+      <div>
         <label for="interest">Reason for Interest in Project</label>
         <textarea bind:value={interest} id="interest"/>
       </div>
-      <div>
-        <label for="email">Email Address</label>
-        <textarea bind:value={email} id="email"/>
-      </div>
-      <div>
-        <label for="phone">Phone Number</label>
-        <textarea bind:value={phone} id="phone"/>
+      <div class="horizontal-stack">
+        <div>
+          <label for="email">Email Address</label>
+          <input bind:value={email} type="email" id="phone"/>
+        </div>
+        <div>
+          <label for="phone">Phone Number</label>
+          <input bind:value={phone} type="tel" id="phone"/>
+        </div>
       </div>
 
       <div class="horizontal-stack">
-        <input type="submit" value="Get Followup Email" on:click={generateEmail} disabled={!(expert && topic && interest && date && email && phone)}/>
+        <input type="submit" value="Get Followup Email" on:click={generateEmail} disabled={!(expert && topic && keywords && interest && date && email && phone)}/>
         <button on:click={randomize}>Randomize</button>
       </div>
     </form>

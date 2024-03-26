@@ -10,12 +10,12 @@
   let email,
       output;
 
-  let expert,
-      topic,
-      challenge,
-      hmw_1,
-      hmw_2,
-      hmw_3;
+  let expert = "",
+      topic = "",
+      challenge = "",
+      hmw_1 = "",
+      hmw_2 = "",
+      hmw_3 = "";
 
   function randomize() {
     let example = placeholders[Math.floor(Math.random() * placeholders.length)]
