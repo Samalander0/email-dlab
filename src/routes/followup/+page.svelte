@@ -98,11 +98,11 @@
       <div class="horizontal-stack">
         <div>
           <label for="email">Email Address</label>
-          <input bind:value={email} type="text" id="email"/>
+          <input bind:value={email} type="email" id="email"/>
         </div>
         <div>
           <label for="phone">Phone Number</label>
-          <input bind:value={phone} type="text" id="phone"/>
+          <input bind:value={phone} type="tel" id="phone"/>
         </div>
       </div>
 
