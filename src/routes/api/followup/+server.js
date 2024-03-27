@@ -32,9 +32,9 @@ const generationConfig = {
 };
 
 // Prompt
-function prompt(expert, topic, email, phone, date, interest) {
+function prompt(expert, topic, keywords, email, phone, date, interest) {
   const parts = [
-    {text: `A concise follow-up email to a ${expert} to set up an interview. Following your initial outreach on ${date} about your high school design project, ${topic}. Using your inspiration for this design project: ${interest}, generate an interview request with the following information: ${email}, ${phone}`}
+    {text: `A concise follow-up email to a ${expert} to set up an interview. Following your initial outreach on ${date} about your high school design project, ${topic}. Using your inspiration for this design project: ${interest}, industry keywords: ${keywords}, generate an interview request with the following information: ${email}, ${phone}`}
   ];
   return(parts)
 }
@@ -45,6 +45,7 @@ export async function GET({ url }) {
 
   const expert = url.searchParams.get('expert'),
         topic = url.searchParams.get('topic'),
+        keywords = url.searchParams.get('keywords')
         email = url.searchParams.get('email'),
         phone = url.searchParams.get('phone'),
         date = url.searchParams.get('date'),

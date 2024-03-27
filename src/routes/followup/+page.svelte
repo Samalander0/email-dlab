@@ -88,7 +88,7 @@
         <input bind:value={topic} type="text" id="topic"/>
       </div>
       <div>
-        <label for="keywords">Industry Keywords</label>
+        <label for="keywords">Project Keywords</label>
         <textarea bind:value={keywords} id="keywords"/>
       </div>
       <div>
@@ -98,7 +98,7 @@
       <div class="horizontal-stack">
         <div>
           <label for="email">Email Address</label>
-          <input bind:value={email} type="email" id="phone"/>
+          <input bind:value={email} type="email" id="email"/>
         </div>
         <div>
           <label for="phone">Phone Number</label>
