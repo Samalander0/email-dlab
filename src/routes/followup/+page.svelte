@@ -12,7 +12,7 @@
 
   let expert,
       topic,
-      keywords
+      keywords,
       interest,
       date,
       email,
