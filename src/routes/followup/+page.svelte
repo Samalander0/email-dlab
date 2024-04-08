@@ -23,7 +23,7 @@
     let example = placeholders[Math.floor(Math.random() * placeholders.length)]
 
     expert = example.expert
-    speciality = example.speciality
+    
     topic = example.topic
     keywords = example.keywords
     interest = example.interest
