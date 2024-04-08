@@ -25,16 +25,16 @@ const safetySettings = [
 ];
 
 const generationConfig = {
-  temperature: 0.55,
+  temperature: 0.5,
   topK: 1,
   topP: 1,
   maxOutputTokens: 2048,
 };
 
 // Prompt
-function prompt(expert, topic, keywords, email, phone, date, interest) {
+function prompt(expert, speciality, topic, keywords, email, phone, date, interest) {
   const parts = [
-    {text: `A concise follow-up email to a ${expert} to set up an interview. Following your initial outreach on ${date} about your high school design project, ${topic}. Using your inspiration for this design project: ${interest}, industry keywords: ${keywords}, generate an interview request with the following information: ${email}, ${phone}`}
+    {text: `A concise follow-up email to a ${expert} in the field of ${speciality} to set up an interview. Following your initial outreach on ${date} about your high school design project, ${topic}. Using your inspiration for this design project: ${interest}, industry keywords: ${keywords}, generate an interview request with the following information: ${email}, ${phone}`}
   ];
   return(parts)
 }
@@ -45,12 +45,13 @@ export async function GET({ url }) {
 
   const expert = url.searchParams.get('expert'),
         topic = url.searchParams.get('topic'),
+        speciality = url.searchParams.get('speciality'),
         keywords = url.searchParams.get('keywords')
         email = url.searchParams.get('email'),
         phone = url.searchParams.get('phone'),
         date = url.searchParams.get('date'),
         interest = url.searchParams.get('interest');
-  let parts = prompt(expert, topic, email, phone, date, interest)
+  let parts = prompt(expert, speciality, keywords, topic, email, phone, date, interest)
   
   const result = await model.generateContent({
     contents: [{ role: "user", parts }],

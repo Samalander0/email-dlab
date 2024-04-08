@@ -11,6 +11,7 @@
       output;
 
   let expert,
+      speciality,
       topic,
       keywords,
       interest,
@@ -22,6 +23,7 @@
     let example = placeholders[Math.floor(Math.random() * placeholders.length)]
 
     expert = example.expert
+    speciality = example.speciality
     topic = example.topic
     keywords = example.keywords
     interest = example.interest
@@ -35,7 +37,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/followup/?expert=${expert}&topic=${topic}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&speciality=${speciality}&topic=${topic}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
     email_output = DOMPurify.sanitize(marked(output))
 
@@ -45,6 +47,7 @@
   function restart() {
     // Reset form fields
     expert = ""
+    speciality = ""
     topic = ""
     keywords = ""
     interest = ""
@@ -82,6 +85,10 @@
           <label for="date">Initial Outreach Date</label>
           <input bind:value={date} type="text" id="date"/>
         </div>
+      </div>
+      <div>
+        <label for="speciality">Expert Speciality</label>
+        <input bind:value={speciality} type="text" id="speciality"/>
       </div>
       <div>
         <label for="topic">Topic Problem</label>
