@@ -25,16 +25,16 @@ const safetySettings = [
 ];
 
 const generationConfig = {
-  temperature: 0.69,
+  temperature: 0.45,
   topK: 1,
   topP: 1,
   maxOutputTokens: 2048,
 };
 
 // Prompt
-function prompt(expert, topic, challenge, hmw_1, hmw_2, hmw_3) {
+function prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3) {
   const parts = [
-    {text: `An outreach formal email to ${expert} about their opinion on your high school design project about ${topic}. Generate new questions based on previous questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Get optimal information for end-user-centered solutions and center the influence of the email around the main challenge: ${challenge}`}
+    {text: `A concise and semi-formal outreach email to a ${expert} about their opinion on your high school design project about ${topic}. Include this personal anecdote: ${statement}. You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these questions. Center the influence of the email around the main topic problem: ${challenge}. Express the desire to set up a meeting through email`}
   ];
   return(parts)
 }
@@ -45,11 +45,12 @@ export async function GET({ url }) {
 
   const expert = url.searchParams.get('expert'),
         topic = url.searchParams.get('topic'),
+        statement = url.searchParams.get('statement'),
         challenge = url.searchParams.get('challenge'),
         hmw_1 = url.searchParams.get('hmw_1'),
         hmw_2 = url.searchParams.get('hmw_2'),
         hmw_3 = url.searchParams.get('hmw_3');
-  let parts = prompt(expert, topic, challenge, hmw_1, hmw_2, hmw_3)
+  let parts = prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3)
   
   const result = await model.generateContent({
     contents: [{ role: "user", parts }],

@@ -12,6 +12,7 @@
 
   let expert = "",
       topic = "",
+      statement = "",
       challenge = "",
       hmw_1 = "",
       hmw_2 = "",
@@ -22,6 +23,7 @@
 
     expert = example.expert
     topic = example.topic
+
     challenge = example.challenge
     hmw_1 = example.hmw_1
     hmw_2 = example.hmw_2
@@ -44,6 +46,7 @@
     // Reset form fields
     expert = ""
     topic = ""
+    statement = ""
     challenge = ""
     hmw_1 = ""
     hmw_2 = ""
@@ -83,6 +86,10 @@
       <div>
         <label for="challenge">Challenge</label>
         <input bind:value={challenge} type="text" id="challenge"/>
+      </div>
+      <div>
+        <label for="statement">Personal Story/Statement</label>
+        <input bind:value={statement} type="text" id="statement"/>
       </div>
       <div>
         <label for="hmw1">How Might We Question #1</label>

@@ -46,7 +46,7 @@ export async function GET({ url }) {
   const expert = url.searchParams.get('expert'),
         topic = url.searchParams.get('topic'),
         speciality = url.searchParams.get('speciality'),
-        keywords = url.searchParams.get('keywords')
+        keywords = url.searchParams.get('keywords'),
         email = url.searchParams.get('email'),
         phone = url.searchParams.get('phone'),
         date = url.searchParams.get('date'),
