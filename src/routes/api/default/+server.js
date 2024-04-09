@@ -25,7 +25,7 @@ const safetySettings = [
 ];
 
 const generationConfig = {
-  temperature: 0.55,
+  temperature: 0.45,
   topK: 1,
   topP: 1,
   maxOutputTokens: 2048,
@@ -34,7 +34,7 @@ const generationConfig = {
 // Prompt
 function prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3) {
   const parts = [
-    {text: `A concise and semi-formal outreach email to a ${expert} about their opinion on your high school design project about ${topic}. Include this personal story: ${statement}. You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these questions. Center the influence of the email around the main topic problem: ${challenge}. Express the desire to set up a meeting through email`}
+    {text: `A concise and semi-formal outreach email to a ${expert} about their opinion on your high school design project about ${topic}. Include this personal story in the response: ${statement}. You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these questions. Center the influence of the email around the main topic problem: ${challenge}. Express the desire to set up a meeting through email`}
   ];
   return(parts)
 }
