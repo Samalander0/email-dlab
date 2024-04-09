@@ -23,7 +23,7 @@
 
     expert = example.expert
     topic = example.topic
-
+    statement = example.statement
     challenge = example.challenge
     hmw_1 = example.hmw_1
     hmw_2 = example.hmw_2
@@ -89,7 +89,7 @@
       </div>
       <div>
         <label for="statement">Personal Story/Statement</label>
-        <input bind:value={statement} type="text" id="statement"/>
+        <textarea bind:value={statement} type="text" id="statement"/>
       </div>
       <div>
         <label for="hmw1">How Might We Question #1</label>

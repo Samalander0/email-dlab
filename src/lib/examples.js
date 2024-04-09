@@ -2,6 +2,7 @@ const placeholders = [
   {
     expert: "a biologist",
     topic: "biodiversity",
+    statement: "I went on a recent trip to a national park. I was excited to see a variety of creatures and critters but I ended up seeing barely any variety among the animals we encountered.",
     challenge: "replanted forests have low biodiversity",
     hmw_1: "how might we incentivise tree planting companies to plant more diverse species?",
     hmw_2: "how might we add more biodiversity to preexisting forests?",
@@ -10,6 +11,7 @@ const placeholders = [
   {
     expert: "a doctor",
     topic: "early arthritis",
+    statement: "",
     challenge: "many middle-aged people have concerns of arthritis but testing for these pains are inefficient and expensive",
     hmw_1: "how might we make it easier for people to detect arthritis early on?",
     hmw_2: "how might we develop new technologies to help people monitor their joint health and detect arthritis early on?",
@@ -18,6 +20,7 @@ const placeholders = [
   {
     expert: "a chef",
     topic: "sustainable cooking",
+    statement: "",
     challenge: "people are not aware of the environmental impact of their food choices",
     hmw_1: "how might we educate people about the environmental impact of their food choices?",
     hmw_2: "how might we encourage people to choose more sustainable food options?",
@@ -26,6 +29,7 @@ const placeholders = [
   {
     expert: "a fitness trainer",
     topic: "workout routines",
+    statement: "",
     challenge: "people get bored of doing the same workout routine every day",
     hmw_1: "how might we create a workout routine that is fun and engaging?",
     hmw_2: "how might we personalize workout routines based on individual preferences?",
@@ -34,6 +38,7 @@ const placeholders = [
   {
     expert: "a business consultant",
     topic: "entrepreneurship",
+    statement: "",
     challenge: "most startups fail",
     hmw_1: "how might we help startups be more successful?",
     hmw_2: "how might we create a more supportive environment for startups?",
@@ -42,6 +47,7 @@ const placeholders = [
   {
     expert: "a philosopher",
     topic: "ethics",
+    statement: "",
     challenge: "artificial intelligence is becoming increasingly sophisticated, raising new ethical questions",
     hmw_1: "how might we ensure that artificial intelligence is used for good?",
     hmw_2: "how might we develop ethical guidelines for the development and use of artificial intelligence?",
@@ -50,6 +56,7 @@ const placeholders = [
   {
     expert: "a physicist",
     topic: "quantum mechanics",
+    statement: "",
     challenge: "quantum computers are too expensive to build",
     hmw_1: "how might we make quantum computers more affordable?",
     hmw_2: "how might we develop new technologies that can be used to build quantum computers?",
@@ -58,6 +65,7 @@ const placeholders = [
   {
     expert: "an architect",
     topic: "affordable housing",
+    statement: "",
     challenge: "many people cannot afford to buy a home",
     hmw_1: "how might we design affordable housing that is also attractive and sustainable?",
     hmw_2: "how might we create new housing models that are more affordable for people on low incomes?",
@@ -66,6 +74,7 @@ const placeholders = [
   {
     expert: "an artist",
     topic: "public art",
+    statement: "",
     challenge: "public art is often inaccessible to people with disabilities",
     hmw_1: "how might we create public art that is accessible to people with disabilities?",
     hmw_2: "how might we develop new technologies that allow people with disabilities to experience public art?",
@@ -74,6 +83,7 @@ const placeholders = [
   {
     expert: "an astronomer",
     topic: "space exploration",
+    statement: "",
     challenge: "space exploration is very expensive",
     hmw_1: "how might we reduce the cost of space exploration?",
     hmw_2: "how might we develop new technologies that make space exploration more affordable?",
@@ -82,6 +92,7 @@ const placeholders = [
   {
     expert: "a botanist",
     topic: "invasive species",
+    statement: "",
     challenge: "invasive species are harming native ecosystems",
     hmw_1: "how might we control the spread of invasive species?",
     hmw_2: "how might we develop new technologies to help us identify and remove invasive species?",

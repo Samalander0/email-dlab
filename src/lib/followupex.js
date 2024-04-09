@@ -1,6 +1,7 @@
 const placeholders = [
   {
     expert: "a biologist",
+    speciality: "marine biologist",
     topic: "pollution in small bodies of water",
     keywords: "plastic, oil, rivers, acidity, reservoir, freshwater",
     interest: "I want to pursue enviromental sustainability.",
@@ -10,6 +11,7 @@ const placeholders = [
   },
   {
     expert: "a doctor",
+    speciality: "",
     topic: "early arthritis",
     keywords: "joint pain, middle age, bones, joint stiffness, mobility",
     interest: "I am interested in a medical career",
@@ -19,6 +21,7 @@ const placeholders = [
   },
   {
     expert: "a chef",
+    speciality: "",
     topic: "vegan alternatives",
     keywords: "diet, health, ethics, sustainability",
     interest: "I want to pursue enviromental sustainability.",
@@ -28,6 +31,7 @@ const placeholders = [
   },
   {
     expert: "a personal trainer",
+    speciality: "",
     topic: "creating balanced personalized workout routines",
     keywords: "health, fitness, weight loss, consistency",
     interest: "I want to work in sports medicine",
@@ -37,6 +41,7 @@ const placeholders = [
   },
   {
     expert: "a business consultant",
+    speciality: "",
     topic: "making startups more successful",
     keywords: "startup, entrepreneur, business, investors",
     interest: "I want to create and grow my own company",
@@ -46,6 +51,7 @@ const placeholders = [
   },
   {
     expert: "a philosopher",
+    speciality: "",
     topic: "keeping the use of artificial intelligence ethical",
     keywords: "ethics, AI, technology",
     interest: "I think that AI is very interesting but a little scary",
@@ -55,6 +61,7 @@ const placeholders = [
   },
   {
     expert: "a physicist",
+    speciality: "",
     topic: "quantum computer affordability",
     keywords: "technology, affordability, quantum mechanics",
     interest: "I'm interested in pursuing technology in the future",
@@ -63,7 +70,8 @@ const placeholders = [
     phone: "132 645 0789"
   },
   {
-    expert: "an architext",
+    expert: "an architect",
+    speciality: "",
     topic: "housing affordability and sustainability",
     keywords: "affordability, houses, sustainable development",
     interest: "I suffered from a lack of affordable housing and I don't want others to experience the same thing",
@@ -73,6 +81,7 @@ const placeholders = [
   },
   {
     expert: "an artist",
+    speciality: "mural artist",
     topic: "making impactful and sustainable public art",
     keywords: "art, expression, impact, positivity",
     interest: "I am interested in a future career in art",
@@ -82,6 +91,7 @@ const placeholders = [
   },
   {
     expert: "an astronomer",
+    speciality: "",
     topic: "making space exploration more accessible and affordable",
     keywords: "affordability, outer space, space travel, nasa, spacex",
     interest: "I want to explore outer space",
@@ -91,6 +101,7 @@ const placeholders = [
   },
   {
     expert: "a botanist",
+    speciality: "",
     topic: "identifying and removing invasive species",
     keywords: "invasive species, enviromental sustainability, ecosystem health",
     interest: "I want to pursue enviromental sustainability.",
