@@ -34,7 +34,7 @@ const generationConfig = {
 // Prompt
 function prompt(expert, speciality, topic, keywords, email, phone, date, interest) {
   const parts = [
-    {text: `A concise follow-up email to a ${expert} in the field of ${speciality} to set up an interview. Following your initial outreach on ${date} about your high school design project, ${topic}. Using your inspiration for this design project: ${interest}, industry keywords: ${keywords}, generate an interview request with the following information: ${email}, ${phone}`}
+    {text: `A concise and semi-formal follow-up email to a ${expert} in the field of ${speciality} to set up an interview. Following your initial outreach on ${date} about your high school design project on ${topic}. Use your reason of interest in this design project: ${interest}, and project keywords: ${keywords}, to generate a meeting request with the following information: ${email}, ${phone}`}
   ];
   return(parts)
 }
