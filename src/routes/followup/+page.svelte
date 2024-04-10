@@ -26,7 +26,7 @@
     expert = example.expert
     speciality = example.speciality
     topic = example.topic
-    outreach = example.outreach
+    
     keywords = example.keywords
     interest = example.interest
     date = example.date
