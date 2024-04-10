@@ -13,6 +13,7 @@
   let expert,
       speciality,
       topic,
+      outreach = "",
       keywords,
       interest,
       date,
@@ -25,6 +26,7 @@
     expert = example.expert
     speciality = example.speciality
     topic = example.topic
+    outreach = example.outreach
     keywords = example.keywords
     interest = example.interest
     date = example.date
@@ -37,7 +39,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/followup/?expert=${expert}&speciality=${speciality}&topic=${topic}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&speciality=${speciality}&topic=${topic}&outreach=${outreach}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
     email_output = DOMPurify.sanitize(marked(output))
 
@@ -49,6 +51,7 @@
     expert = ""
     speciality = ""
     topic = ""
+    outreach = ""
     keywords = ""
     interest = ""
     date = ""
@@ -111,6 +114,10 @@
           <label for="phone">Phone Number</label>
           <input bind:value={phone} type="tel" id="phone"/>
         </div>
+      </div>
+      <div>
+        <label for="outreach">Initial Outreach Email (Copy Paste Here)</label>
+        <textarea bind:value={outreach} id="outreach"/>
       </div>
 
       <div class="horizontal-stack">
