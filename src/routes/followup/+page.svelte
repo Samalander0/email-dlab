@@ -10,15 +10,15 @@
   let email_output,
       output;
 
-  let expert,
-      speciality,
-      topic,
+  let expert = "",
+      speciality = "",
+      topic = "",
       outreach = "",
-      keywords,
-      interest,
-      date,
-      email,
-      phone;
+      keywords = "",
+      interest = "",
+      date = "",
+      email = "",
+      phone = "";
 
   function randomize() {
     let example = placeholders[Math.floor(Math.random() * placeholders.length)]
@@ -26,7 +26,7 @@
     expert = example.expert
     speciality = example.speciality
     topic = example.topic
-    
+    outreach = example.outreach
     keywords = example.keywords
     interest = example.interest
     date = example.date
