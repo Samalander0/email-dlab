@@ -88,7 +88,7 @@
         <input bind:value={challenge} type="text" id="challenge"/>
       </div>
       <div>
-        <label for="statement">Personal Story/Statement</label>
+        <label for="statement">Personal Story/Statement (Optional)</label>
         <textarea bind:value={statement} type="text" id="statement"/>
       </div>
       <div>
