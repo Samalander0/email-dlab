@@ -16,7 +16,10 @@
       challenge = "",
       hmw_1 = "",
       hmw_2 = "",
-      hmw_3 = "";
+      hmw_3 = "",
+      tone = "",
+      personal = "",
+      other = "";
 
   function randomize() {
     let example = placeholders[Math.floor(Math.random() * placeholders.length)]
@@ -28,6 +31,9 @@
     hmw_1 = example.hmw_1
     hmw_2 = example.hmw_2
     hmw_3 = example.hmw_3
+    tone = example.tone
+    personal = example.personal
+    other = example.other
   }
 
   async function generateEmail(e) {
@@ -35,7 +41,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/default/?expert=${expert}&topic=${topic}&statement=${statement}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}`)
+    const response = await fetch(`./api/default/?expert=${expert}&topic=${topic}&statement=${statement}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}&tone=${tone}&personal=${personal}&other=${other}`)
     output = await response.json()
     email = DOMPurify.sanitize(marked(output))
 
@@ -51,6 +57,9 @@
     hmw_1 = ""
     hmw_2 = ""
     hmw_3 = ""
+    tone = ""
+    personal = ""
+    other = ""
 
     // Go back to form state
     state = "form"
@@ -79,9 +88,13 @@
           <input bind:value={expert} type="text" id="expert"/>
         </div>
         <div>
-          <label for="topic">Project Topic</label>
-          <input bind:value={topic} type="text" id="topic"/>
+          <label for="tone">Tone/label>
+          <input bind:value={tone} type="text" id="tone"/>
         </div>
+      </div>
+      <div>
+        <label for="topic">Project Topic</label>
+        <input bind:value={topic} type="text" id="topic"/>
       </div>
       <div>
         <label for="challenge">Challenge</label>
@@ -103,9 +116,17 @@
         <label for="hmw3">How Might We Question #3</label>
         <textarea bind:value={hmw_3} id="hmw3"/>
       </div>
+      <div>
+        <label for="personal">Name, Grade, School</label>
+        <input bind:value={personal} type="text" id="personal"/>
+      </div>
+      <div>
+        <label for="other">Other Information (Optional)</label>
+        <textarea bind:value={other} id="other"/>
+      </div>
 
       <div class="horizontal-stack">
-        <input type="submit" value="Get Outreach Email" on:click={generateEmail} disabled={!(expert && topic && challenge && hmw_1 && hmw_2 && hmw_3)}/>
+        <input type="submit" value="Get Outreach Email" on:click={generateEmail} disabled={!(expert && topic && challenge && hmw_1 && hmw_2 && hmw_3 && personal && tone)}/>
         <button on:click={randomize}>Randomize</button>
       </div>
     </form>

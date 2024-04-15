@@ -32,9 +32,9 @@ const generationConfig = {
 };
 
 // Prompt
-function prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3) {
+function prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other) {
   const parts = [
-    {text: `A short, concise and semi-formal outreach email in a passionate tone to a ${expert} about their opinion on your high school design project about ${topic}. Include this personal story: ${statement} You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these questions but do not restate them. Center the influence of the email around the main topic problem: ${challenge}. Express the desire to set up a meeting through email`}
+    {text: `A concise and semi-formal outreach email in a ${tone} tone to a ${expert} about their opinion on your high school design project about ${topic}. Include this personal anecdote: ${statement} You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these previous questions into new questions. Center the influence of the email around the main topic problem: ${challenge}. Sender personal information: ${personal}. Other information: ${other}. Keep the email to a 150 word count limit.`}
   ];
   return(parts)
 }
@@ -49,8 +49,11 @@ export async function GET({ url }) {
         challenge = url.searchParams.get('challenge'),
         hmw_1 = url.searchParams.get('hmw_1'),
         hmw_2 = url.searchParams.get('hmw_2'),
-        hmw_3 = url.searchParams.get('hmw_3');
-  let parts = prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3)
+        hmw_3 = url.searchParams.get('hmw_3'),
+        tone = url.searchParams.get('tone'),
+        personal = url.searchParams.get('personal'),
+        other = url.searchParams.get('other');
+  let parts = prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other)
   
   const result = await model.generateContent({
     contents: [{ role: "user", parts }],
