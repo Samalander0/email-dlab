@@ -31,9 +31,7 @@
     hmw_1 = example.hmw_1
     hmw_2 = example.hmw_2
     hmw_3 = example.hmw_3
-    tone = example.tone
-    personal = example.personal
-    other = example.other
+    
   }
 
   async function generateEmail(e) {
