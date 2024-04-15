@@ -86,7 +86,7 @@
           <input bind:value={expert} type="text" id="expert"/>
         </div>
         <div>
-          <label for="tone">Tone/label>
+          <label for="tone">Tone</label>
           <input bind:value={tone} type="text" id="tone"/>
         </div>
       </div>
@@ -115,7 +115,7 @@
         <textarea bind:value={hmw_3} id="hmw3"/>
       </div>
       <div>
-        <label for="personal">Name, Grade, School</label>
+        <label for="personal">Personal Information (Name, Grade, School, etc)</label>
         <input bind:value={personal} type="text" id="personal"/>
       </div>
       <div>
