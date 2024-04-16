@@ -127,7 +127,7 @@
         <input bind:value={personal} type="text" id="personal"/>
       </div>
       <div>
-        <label for="other">Other Information (Optional)</label>
+        <label for="other">Other Information (Ex. Still in design phase, Prototyping, etc)</label>
         <textarea bind:value={other} id="other"/>
       </div>
 
