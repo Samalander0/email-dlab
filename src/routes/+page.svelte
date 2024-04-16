@@ -11,6 +11,7 @@
       output;
 
   let expert = "",
+      exname = "",
       topic = "",
       statement = "",
       challenge = "",
@@ -39,7 +40,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/default/?expert=${expert}&topic=${topic}&statement=${statement}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}&tone=${tone}&personal=${personal}&other=${other}`)
+    const response = await fetch(`./api/default/?expert=${expert}&exname=${exname}&topic=${topic}&statement=${statement}&challenge=${challenge}&hmw_1=${hmw_1}&hmw_2=${hmw_2}&hmw_3=${hmw_3}&tone=${tone}&personal=${personal}&other=${other}`)
     output = await response.json()
     email = DOMPurify.sanitize(marked(output))
 
@@ -49,6 +50,7 @@
   function restart() {
     // Reset form fields
     expert = ""
+    exname = ""
     topic = ""
     statement = ""
     challenge = ""
@@ -86,13 +88,19 @@
           <input bind:value={expert} type="text" id="expert"/>
         </div>
         <div>
-          <label for="tone">Tone</label>
+          <label for="tone">Tone (Ex. Passionate)</label>
           <input bind:value={tone} type="text" id="tone"/>
         </div>
       </div>
-      <div>
-        <label for="topic">Project Topic</label>
-        <input bind:value={topic} type="text" id="topic"/>
+      <div class="horizontal-stack">
+        <div>
+          <label for="exname">Expert's Name</label>
+          <input bind:value={exname} type="text" id="exname"/>
+        </div>
+        <div>
+          <label for="topic">Project Topic</label>
+          <input bind:value={topic} type="text" id="topic"/>
+        </div>
       </div>
       <div>
         <label for="challenge">Challenge</label>
@@ -124,7 +132,7 @@
       </div>
 
       <div class="horizontal-stack">
-        <input type="submit" value="Get Outreach Email" on:click={generateEmail} disabled={!(expert && topic && challenge && hmw_1 && hmw_2 && hmw_3 && personal && tone)}/>
+        <input type="submit" value="Get Outreach Email" on:click={generateEmail} disabled={!(expert && exname && topic && challenge && hmw_1 && hmw_2 && hmw_3 && personal && tone)}/>
         <button on:click={randomize}>Randomize</button>
       </div>
     </form>

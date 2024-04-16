@@ -32,9 +32,9 @@ const generationConfig = {
 };
 
 // Prompt
-function prompt(expert, speciality, topic, outreach, keywords, email, phone, date, interest) {
+function prompt(expert, exname, speciality, topic, outreach, keywords, email, phone, date, interest) {
   const parts = [
-    {text: `A concise and semi-formal follow-up email to a ${expert} in the field of ${speciality} to set up an interview. Following your initial outreach on ${date} about your high school design project on ${topic}. Keeping in mind your original outreach email: ${outreach}. Avoide being too repetitive, use your reason of interest in this design project: ${interest}, and project keywords: ${keywords}, to generate a meeting request with the following information: ${email}, ${phone}`}
+    {text: `A concise and semi-formal follow-up email to a ${expert}, named ${exname}, in the field of ${speciality} to set up an interview. Following your initial outreach on ${date} about your high school design project on ${topic}. Avoid repeating yourself by keeping in mind your original outreach email: ${outreach}. Use your reason of interest in this design project: ${interest}, and project keywords: ${keywords}, to generate a meeting request with the following information: ${email}, ${phone}. Keep the email to a 150 word count limit.`}
   ];
   return(parts)
 }
@@ -44,6 +44,7 @@ export async function GET({ url }) {
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
   const expert = url.searchParams.get('expert'),
+        exname = url.searchParams.get('exname'),
         topic = url.searchParams.get('topic'),
         speciality = url.searchParams.get('speciality'),
         outreach = url.searchParams.get('outreach'),
@@ -52,7 +53,7 @@ export async function GET({ url }) {
         phone = url.searchParams.get('phone'),
         date = url.searchParams.get('date'),
         interest = url.searchParams.get('interest');
-  let parts = prompt(expert, speciality, outreach, keywords, topic, email, phone, date, interest)
+  let parts = prompt(expert, exname, speciality, outreach, keywords, topic, email, phone, date, interest)
   
   const result = await model.generateContent({
     contents: [{ role: "user", parts }],

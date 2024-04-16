@@ -11,6 +11,7 @@
       output;
 
   let expert = "",
+      exname = "",
       speciality = "",
       topic = "",
       outreach = "",
@@ -39,7 +40,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/followup/?expert=${expert}&speciality=${speciality}&topic=${topic}&outreach=${outreach}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&exname=${exname}&speciality=${speciality}&topic=${topic}&outreach=${outreach}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
     email_output = DOMPurify.sanitize(marked(output))
 
@@ -49,6 +50,7 @@
   function restart() {
     // Reset form fields
     expert = ""
+    exname = ""
     speciality = ""
     topic = ""
     outreach = ""
@@ -89,9 +91,15 @@
           <input bind:value={date} type="text" id="date"/>
         </div>
       </div>
-      <div>
-        <label for="speciality">Expert Speciality</label>
-        <input bind:value={speciality} type="text" id="speciality"/>
+      <div clss="horizontal-stack">
+        <div>
+          <label for="speciality">Expert Speciality</label>
+          <input bind:value={speciality} type="text" id="speciality"/>
+        </div>
+        <div>
+          <label for="exname"> Expert's Name</label>
+          <input bind:value={speciality} type="text" id="speciality"/>
+        </div>
       </div>
       <div>
         <label for="topic">Topic Problem</label>

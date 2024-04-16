@@ -32,9 +32,9 @@ const generationConfig = {
 };
 
 // Prompt
-function prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other) {
+function prompt(expert, exname, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other) {
   const parts = [
-    {text: `A concise and semi-formal outreach email in a ${tone} tone to a ${expert} about their opinion on your high school design project about ${topic}. Include this personal anecdote: ${statement} You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these previous questions into new questions. Center the influence of the email around the main topic problem: ${challenge}. Sender personal information: ${personal}. Other information: ${other}. Keep the email to a 150 word count limit.`}
+    {text: `A concise and semi-formal outreach email in a ${tone} tone to a ${expert}, named ${exname}, about their opinion on your high school design project about ${topic}. Include this personal anecdote: ${statement} You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these previous questions into new questions. Center the influence of the email around the main topic problem: ${challenge}. Sender personal information: ${personal}. Other information: ${other}. Keep the email to a 150 word count limit.`}
   ];
   return(parts)
 }
@@ -44,6 +44,7 @@ export async function GET({ url }) {
   const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
   const expert = url.searchParams.get('expert'),
+        exname = url.searchParams.get('exname'),
         topic = url.searchParams.get('topic'),
         statement = url.searchParams.get('statement'),
         challenge = url.searchParams.get('challenge'),
@@ -53,7 +54,7 @@ export async function GET({ url }) {
         tone = url.searchParams.get('tone'),
         personal = url.searchParams.get('personal'),
         other = url.searchParams.get('other');
-  let parts = prompt(expert, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other)
+  let parts = prompt(expert, exname, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other)
   
   const result = await model.generateContent({
     contents: [{ role: "user", parts }],
