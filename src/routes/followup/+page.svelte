@@ -91,7 +91,7 @@
           <input bind:value={date} type="text" id="date"/>
         </div>
       </div>
-      <div clss="horizontal-stack">
+      <div class="horizontal-stack">
         <div>
           <label for="speciality">Expert Speciality</label>
           <input bind:value={speciality} type="text" id="speciality"/>
