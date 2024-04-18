@@ -98,7 +98,7 @@
         </div>
         <div>
           <label for="exname"> Expert's Name</label>
-          <input bind:value={speciality} type="text" id="speciality"/>
+          <input bind:value={exname} type="text" id="exname"/>
         </div>
       </div>
       <div>
