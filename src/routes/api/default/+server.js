@@ -34,7 +34,7 @@ const generationConfig = {
 // Prompt
 function prompt(expert, exname, topic, statement, challenge, hmw_1, hmw_2, hmw_3, tone, personal, other) {
   const parts = [
-    {text: `A concise and semi-formal outreach email in a ${tone} tone to a ${expert}, named ${exname}, about their opinion on your high school design project about ${topic}. Include this personal anecdote: ${statement} You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these previous questions into new questions. Center the influence of the email around the main topic problem: ${challenge}. Sender personal information: ${personal}. Other information: ${other}. Keep the email to 150 words or less.`}
+    {text: `A concise and semi-formal outreach email in a ${tone} tone to a ${expert}, named ${exname}, to set up a virtual or in-person meeting in the coming weeks regarding your high school design project about ${topic}. Include this personal anecdote: ${statement} You're trying to learn about the following questions: ${hmw_1}, ${hmw_2}, and ${hmw_3}. Integrate the key concepts of these previous questions into new questions. Center the influence of the email around the main topic problem: ${challenge}. Sender personal information: ${personal}. Other information: ${other}. Keep the email to 150 words or less.`}
   ];
   return(parts)
 }
