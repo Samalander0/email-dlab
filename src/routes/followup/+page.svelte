@@ -126,7 +126,7 @@
         </div>
       </div>
       <div>
-        <label for="name">Personal Information (Name, Grade, School, etc)</label>
+        <label for="name">Your Name</label>
         <input bind:value={name} type="text" id="name"/>
       </div>
       <div>
