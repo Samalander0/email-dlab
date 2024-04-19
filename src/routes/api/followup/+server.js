@@ -34,7 +34,7 @@ const generationConfig = {
 // Prompt
 function prompt(expert, exname, speciality, topic, outreach, keywords, name, email, phone, date, interest) {
   const parts = [
-    {text: `A concise and semi-formal follow-up email to a ${expert}, named ${exname}, in the field of ${speciality} to set up an in-person or virtual meeting. Following your initial outreach on ${date} about your high school design project on ${topic}. Avoid repeating yourself by keeping in mind your original outreach email: ${outreach}. Use your reason of interest in this design project: ${interest}, and project keywords: ${keywords}, to generate a meeting request with the following personal information: ${name}, ${email}, ${phone}. Keep the email to a 150 word count limit.`}
+    {text: `A concise and semi-formal follow-up email to a ${expert}, named ${exname}, in the field of ${speciality} to set up an in-person or virtual meeting. Following your initial outreach on ${date} about your high school design project on ${topic}. Avoid repeating yourself by keeping in mind your original outreach email: ${outreach}. Use your reason of interest in this design project: ${interest}, and project keywords: ${keywords}, to generate a meeting request with the following personal information: ${name}, email address: ${email}, and phone number: ${phone}. Keep the email to a 150 word count limit.`}
   ];
   return(parts)
 }
