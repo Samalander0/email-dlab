@@ -18,6 +18,7 @@
       keywords = "",
       interest = "",
       date = "",
+      name = "",
       email = "",
       phone = "";
 
@@ -40,7 +41,7 @@
 
     state = "loading"
 
-    const response = await fetch(`./api/followup/?expert=${expert}&exname=${exname}&speciality=${speciality}&topic=${topic}&outreach=${outreach}&keywords=${keywords}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
+    const response = await fetch(`./api/followup/?expert=${expert}&exname=${exname}&speciality=${speciality}&topic=${topic}&outreach=${outreach}&keywords=${keywords}&name=${name}&interest=${interest}&date=${date}&email=${email}&phone=${phone}`)
     output = await response.json()
     email_output = DOMPurify.sanitize(marked(output))
 
@@ -56,6 +57,7 @@
     outreach = ""
     keywords = ""
     interest = ""
+    name = ""
     date = ""
     email = ""
     phone = ""
@@ -124,12 +126,16 @@
         </div>
       </div>
       <div>
+        <label for="name">Personal Information (Name, Grade, School, etc)</label>
+        <input bind:value={name} type="text" id="name"/>
+      </div>
+      <div>
         <label for="outreach">Initial Outreach Email (Copy Paste Here)</label>
         <textarea bind:value={outreach} id="outreach"/>
       </div>
 
       <div class="horizontal-stack">
-        <input type="submit" value="Get Followup Email" on:click={generateEmail} disabled={!(expert && topic && keywords && interest && date && email && phone)}/>
+        <input type="submit" value="Get Followup Email" on:click={generateEmail} disabled={!(expert && topic && keywords && interest && date && name && email && phone)}/>
         <button on:click={randomize}>Randomize</button>
       </div>
     </form>
